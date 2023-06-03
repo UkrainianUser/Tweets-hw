@@ -47,7 +47,11 @@ button {
   cursor: pointer;
 }
 
+a {
+  text-decoration: none;
+}
+
 .container {
-  padding-left: 16px;
-  padding-right: 16px;
+  max-width: 1260px;
+  margin: 0 auto;
 }
