@@ -6,8 +6,15 @@ import { useState } from 'react';
 
 const TweetsCard = () => {
   const [isFollowing, setIsFollowing] = useState(false);
+  const [followersCount, setFollowersCount] = useState(100500);
+
   const handleBtnClick = () => {
     setIsFollowing(!isFollowing);
+    if (!isFollowing) {
+      setFollowersCount(followersCount + 1);
+    } else {
+      setFollowersCount(followersCount - 1);
+    }
   };
 
   return (
@@ -31,7 +38,7 @@ const TweetsCard = () => {
               <span>777</span> tweets
             </p>
             <p className={css.followersCount}>
-              <span>100500</span> Followers
+              <span>{followersCount}</span> Followers
             </p>
             <button
               className={`${css.followBtn} ${
