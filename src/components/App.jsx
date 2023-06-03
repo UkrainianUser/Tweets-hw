@@ -1,23 +1,12 @@
-import logo from 'logo.svg';
+import Home from 'pages/Home';
 import css from './App.module.css';
+import Tweets from 'pages/Tweets';
 
 function App() {
   return (
     <div className={css.app}>
-      <header className={css.header}>
-        <img src={logo} className={css.logo} alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className={css.link}
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Home />
+      <Tweets />
     </div>
   );
 }
