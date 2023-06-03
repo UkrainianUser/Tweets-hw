@@ -7,6 +7,9 @@ import axios from 'axios';
 
 const TweetsCard = () => {
   const [users, setUsers] = useState([]);
+  const [visibleUsers, setVisibleUsers] = useState([]);
+  const [currentPage, setCurrentPage] = useState(1);
+  const perPage = 3;
 
   useEffect(() => {
     const fetchData = async () => {
@@ -22,6 +25,12 @@ const TweetsCard = () => {
 
     fetchData();
   }, []);
+
+  useEffect(() => {
+    const startIndex = (currentPage - 1) * perPage;
+    const endIndex = startIndex + perPage;
+    setVisibleUsers(users.slice(0, endIndex));
+  }, [users, currentPage]);
 
   const handleBtnClick = async event => {
     const userId = event.currentTarget.dataset.userId;
@@ -64,10 +73,14 @@ const TweetsCard = () => {
     return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
   };
 
+  const loadMoreUsers = () => {
+    setCurrentPage(prevPage => prevPage + 1);
+  };
+
   return (
     <div className="container">
       <ul className={css.cardsList}>
-        {users.map(user => (
+        {visibleUsers.map(user => (
           <li className={css.tweetsCard} key={user.id}>
             <div className={css.cardTop}>
               <a href="https://www.edu.goit.global/">
@@ -102,6 +115,11 @@ const TweetsCard = () => {
           </li>
         ))}
       </ul>
+      {visibleUsers.length < users.length && (
+        <button className={css.loadMoreBtn} onClick={loadMoreUsers}>
+          Load More
+        </button>
+      )}
     </div>
   );
 };
