@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunktweets_hw=self.webpackChunktweets_hw||[]).push([[415],{415:function(e,t,n){n.r(t);var s=n(184);t.default=function(){return(0,s.jsx)("h1",{style:{textAlign:"center"},children:"Hello! Welcome to the app 'Tweets'"})}}}]);
+//# sourceMappingURL=415.9b9ce615.chunk.js.map
