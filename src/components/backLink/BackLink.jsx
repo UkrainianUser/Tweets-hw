@@ -14,7 +14,5 @@ const BackLink = ({ to }) => {
 export default BackLink;
 
 BackLink.propTypes = {
-  to: PropTypes.shape({
-    path: PropTypes.string,
-  }),
+  to: PropTypes.string,
 };
