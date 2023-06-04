@@ -7,7 +7,9 @@ const Header = () => {
       <div className="container">
         <ul className={css.linkList}>
           <li>
-            <NavLink to="/">Home</NavLink>
+            <NavLink to="/" exact>
+              Home
+            </NavLink>
           </li>
           <li>
             <NavLink to="/tweets">Tweets</NavLink>
