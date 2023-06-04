@@ -90,7 +90,7 @@ const TweetsCard = () => {
                 <img src={popup} alt="chat" />
               </span>
               <span className={css.avatar}>
-                <img src={avatar} alt="avatar" />
+                <img src={user.avatar || avatar} alt={user.user} />
               </span>
             </div>
             <span className={css.cardLine}></span>
